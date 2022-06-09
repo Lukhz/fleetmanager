@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ShipController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\HerstellerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,16 @@ Route::middleware(['auth'])->group(function () {
     Route::post('books/update/{id}', [BookController::class, 'postUpdate']);
     Route::get('books/delete/{id}', [BookController::class, 'getDelete']);
     Route::get('books/json', [BookController::class, 'getJson']);
+
+    Route::get('herstellers', [HerstellerController::class, 'getIndex']);
+    Route::get('herstellers/index', [HerstellerController::class, 'getIndex']);
+    Route::get('herstellers/show/{id}', [HerstellerController::class, 'getShow']);
+    Route::get('herstellers/add', [HerstellerController::class, 'getAdd']);
+    Route::post('herstellers/save', [HerstellerController::class, 'postSave']);
+    Route::get('herstellers/edit/{id}', [HerstellerController::class, 'getEdit']);
+    Route::post('herstellers/update/{id}', [HerstellerController::class, 'postUpdate']);
+    Route::get('herstellers/delete/{id}', [HerstellerController::class, 'getDelete']);
+    Route::get('herstellers/json', [HerstellerController::class, 'getJson']);
 });
 
 Route::get('/dashboard', function () {
