@@ -1,13 +1,14 @@
 @extends('layouts.layout')
 
 @section('content')
-        <h1>Hersteller bearbeiten</h1>
+        <h1>Modell hinzufügen</h1>
         @include('snippets.error')
-        {!! Form::model($entity, ['url' => 'herstellers/update/'.$entity->id]) !!}
+
+        {!! Form::open(['url' => 'modells/save']) !!}
             {!! Form::text('name', null, ['class'=>'form-control', 'placeholder'=>'Herstellersname...']) !!}
             <br/>
             {!! Form::submit('Speichern', ['class'=>'btn btn-success']) !!}
-            <a href="{{url('herstellers')}}" class="btn btn-danger">Abbrechen</a>
+            <a href="{{url('modells')}}" class="btn btn-danger">Abbrechen</a>
 
         {!! Form::close() !!}
 @endsection
