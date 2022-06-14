@@ -12,6 +12,8 @@
                     <th>ps</th>
                     <th>propeller</th>
                     <th>patrol</th>
+                    <th>Factory</th>
+                    <th>Type</th>
                     <th>Bearbeiten</th>
                 </tr>
             </thead>
@@ -25,6 +27,8 @@
                         <td>{{ $entity->ps}}</td>
                         <td>{{ $entity->propeller}}</td>
                         <td>{{ $entity->patrol}}</td>
+                        <td>@if($entity->herstellers){{$entity->herstellers->name}}@else - @endif</td>
+                        <td>@if($entity->modell){{$entity->modell->name}}@else - @endif</td>
                         <th></th>
                     </tr>   
                 

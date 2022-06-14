@@ -35,7 +35,7 @@ class Controller extends BaseController
         $class = $this->className;
         $entity = new $class();
         foreach($this->fields as $field)
-        {
+        { 
             $entity->$field = $req->input($field);
         }
         $entity->save();
