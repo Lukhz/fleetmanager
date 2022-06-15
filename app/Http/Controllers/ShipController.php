@@ -21,7 +21,7 @@ class ShipController extends Controller
         'propeller' => 'required',
         'patrol' => 'required',
         'hersteller_id' => 'required',
-        'modell'
+        'modell_id'
     ];
       
     public function getAdd(){

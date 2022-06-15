@@ -13,13 +13,43 @@
     <title>Schiffsdatenbank</title>
   </head>
   <body>
-    <form method="post" action="{{url('logout')}}">
+    <!-- navigation bar -->
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 offset-sm-3 col-md-6 offset-md-3">
+        
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/ships">Schiffe</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/herstellers">Hersteller</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/modells">Modelle</a>
+          </li>
+          <li class="nav-item">
+            <form method="post" action="{{url('logout')}}">
+                @csrf
+                <input type="submit" class="btn btn-danger" value="Abmelden">
+            </form>
+          </li>
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+  <!-- navigation bar ends here -->
+    <!--<form method="post" action="{{url('logout')}}">
       @csrf
       <input type="submit" class="btn btn-danger" value="Abmelden">
-    </form>
+    </form>-->
     <div class="container">
         @yield('content')
     </div>
-
+    
   </body>
 </html>
