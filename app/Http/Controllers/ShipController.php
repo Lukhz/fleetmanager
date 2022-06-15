@@ -11,7 +11,7 @@ class ShipController extends Controller
 {   
     protected $className = 'App\Models\Ship';
     protected $entityName = 'ships';
-    protected $fields = ['name', 'brt','deepness','decks','ps','propeller','patrol','hersteller_id'];
+    protected $fields = ['name', 'brt','deepness','decks','ps','propeller','patrol','hersteller_id','modell_id'];
     protected $validation = [
         'name' => 'required',
         'brt' => 'required|numeric',
@@ -21,7 +21,7 @@ class ShipController extends Controller
         'propeller' => 'required',
         'patrol' => 'required',
         'hersteller_id' => 'required',
-        'modell' => 'required'
+        'modell'
     ];
       
     public function getAdd(){
@@ -64,5 +64,8 @@ class ShipController extends Controller
 
 }
 
+//Aber one to Many muss ich eine Tabellenspalte erstellen um hersteller_id abzuspeichern?
+
 // hinzufügen mit laravel mthode dazu ist, detach und attach 
 // sont nur die ID übergeben die im req eingeschpeicher ist
+// aber one to many 

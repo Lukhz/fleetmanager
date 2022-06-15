@@ -26,6 +26,10 @@ class Relationen extends Migration
             $table->integer('ship_id')->nullable();
             $table->timestamps();
         });
+        Schema::table('ships', function (Blueprint $table) {
+            $table->integer('hersteller_id')->nullable();
+            $table->integer('modell_id')->nullable();
+        });
     }
 
     /**

@@ -18,9 +18,9 @@
             <br/>
             {!! Form::text('patrol', null, ['class'=>'form-control', 'placeholder'=>'patrol']) !!}
             <br/>
-            {!! Form::select('hersteller', $herstellers, null, ['class'=>'form-control', 'placeholder'=>'hersteller']) !!}
+            {!! Form::select('hersteller_id', $herstellers, null, ['class'=>'form-control', 'placeholder'=>'hersteller']) !!}
             <br/>
-            {!! Form::select('modell', $modells, null, ['class'=>'form-control', 'placeholder'=>'modell']) !!}
+            {!! Form::select('modell_id', $modells, null, ['class'=>'form-control', 'placeholder'=>'modell']) !!}
             <br/>
             {!! Form::submit('Speichern', ['class'=>'btn btn-success']) !!}
             <a href="{{url('ships')}}" class="btn btn-danger">Abbrechen</a>
