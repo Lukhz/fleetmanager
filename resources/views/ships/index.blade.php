@@ -13,8 +13,8 @@
                     <th>ps</th>
                     <th>propeller</th>
                     <th>patrol</th>
-                    <th>Factory</th>
-                    <th>Type</th>
+                    <th>Modell</th>
+                    <th>Hersteller<th>
                     <th>Bearbeiten</th>
                 </tr>
             </thead>
@@ -28,8 +28,8 @@
                         <td>{{ $ship->ps}}</td>
                         <td>{{ $ship->propeller}}</td>
                         <td>{{ $ship->patrol}}</td>
-                        <td>@if($ship->hersteller_id){{$ship->hersteller->name}}@else - @endif</td>
                         <td>@if($ship->modell_id){{$ship->modell->name}}@else - @endif</td>
+                        <td>@if($ship->modell->hersteller_id){{$ship->modell->hersteller->name}}@else - @endif</td>
                         <td>
                             <a href="{{url('ships/show/'.$ship->id)}}" class="btn btn-success">Show</a>
                             <a href="{{url('ships/edit/'.$ship->id)}}" class="btn btn-primary">Edit</a>

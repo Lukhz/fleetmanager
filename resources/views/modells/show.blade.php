@@ -7,12 +7,14 @@
                 <tr>
                     <th>Name</th>
                     <th>Bearbeiten</th>
+                    <th>Hersteller</th>
                 </tr>
             </thead>
             <tbody>
                 
                     <tr>
                         <th>{{ $entity->name}}</th>
+                        <td>@if($entity->hersteller_id){{$entity->hersteller->name}}@else - @endif</td>
                         <th></th>
                     </tr>   
                 

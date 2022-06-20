@@ -8,4 +8,8 @@ class Modell extends Model
     {
         return $this->hasMany('App\Models\Ship');
     }
+    public function hersteller()
+    {
+        return $this->belongsTo('App\Models\Hersteller','hersteller_id');
+    }
 }

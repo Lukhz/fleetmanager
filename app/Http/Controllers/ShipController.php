@@ -4,14 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Ship;
-use App\Models\Hersteller;
 use App\Models\Modell;
 
 class ShipController extends Controller
 {   
     protected $className = 'App\Models\Ship';
     protected $entityName = 'ships';
-    protected $fields = ['name', 'brt','deepness','decks','ps','propeller','patrol','hersteller_id','modell_id'];
+    protected $fields = ['name', 'brt','deepness','decks','ps','propeller','patrol','modell_id'];
     protected $validation = [
         'name' => 'required',
         'brt' => 'required|numeric',
@@ -20,24 +19,24 @@ class ShipController extends Controller
         'ps' => 'required',
         'propeller' => 'required',
         'patrol' => 'required',
-        'hersteller_id' => 'required',
         'modell_id'
     ];
       
     public function getAdd(){
-          $herstellers = Hersteller::orderBy('name')->get()->pluck('name', 'id');
+
+
+        
           $modells = Modell::orderBy('name')->get()->pluck('name', 'id');
-            return view('ships.add')->with('herstellers', $herstellers)->with('modells', $modells);
+            return view('ships.add')->with('modells', $modells);
       }
       public function getEdit($id){
         $ship = Ship::find($id);
         
         if ($ship){
         
-            $herstellers = Hersteller::orderBy('name')->get()->pluck('name', 'id');
         $modells = Modell::orderBy('name')->get()->pluck('name', 'id');
             
-            return view('ships.edit')->with('entity',$ship)->with('herstellers', $herstellers)->with('modells', $modells);
+            return view('ships.edit')->with('entity',$ship)->with('modells', $modells);
         } 
         else{
             return redirect('ships');

@@ -7,13 +7,15 @@
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Bearbeiten</th>
+                    <th>Hersteller</th>
+                    <th>Bearbeiten<th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($entities as $index=>$modell)
                     <tr>
                         <td>{{ $modell->name}}</td>
+                        <td>@if($modell->hersteller_id){{$modell->hersteller->name}}@else - @endif</td>
                         <td>
                             <a href="{{url('modells/show/'.$modell->id)}}" class="btn btn-success">Show</a>
                             <a href="{{url('modells/edit/'.$modell->id)}}" class="btn btn-primary">Edit</a>

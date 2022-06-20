@@ -4,8 +4,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Hersteller extends Model
 {
-    public function ship()
+    public function modell()
     {
-        return $this->hasMany('App\Models\Ship');
+        return $this->hasMany('App\Models\Modell');
     }
 }

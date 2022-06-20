@@ -19,8 +19,6 @@
             <br/>
             {!! Form::text('patrol', null, ['class'=>'form-control', 'placeholder'=>'patrol']) !!}
             <br/>
-            {!! Form::select('hersteller_id', $herstellers, null, ['class'=>'form-control', 'placeholder'=>'hersteller']) !!}
-            <br/>
             {!! Form::select('modell_id', $modells, null, ['class'=>'form-control', 'placeholder'=>'modell']) !!}
             <br/>
             {!! Form::submit('Speichern', ['class'=>'btn btn-success']) !!}
